@@ -1,0 +1,201 @@
+/* Стили для чекбокса (невидимого) */
+[type="checkbox"]:checked, [type="checkbox"]:not(:checked) {
+    position: absolute; /* Позиционирование абсолютно */
+    left: -9999px; /* Смещение влево на большое расстояние за пределы видимой 
+    области */
+    }
+    /* Стили для иконки меню */
+.menu-icon:checked + label, .menu-icon:not(:checked) + label {
+    position: fixed; /* Позиционирование фиксировано */
+    top: 63px; /* Расположение по вертикали на 63px от верхней границы */
+    right: 75px; /* Расположение справа на 75px от правой границы */
+    display: block; /* Отображение как блочный элемент */
+    width: 30px; /* Ширина 30px */
+    height: 30px; /* Высота 30px */
+    padding: 0; /* Внутренний отступ 0 */
+    margin: 0; /* Внешний отступ 0 */
+    cursor: pointer; /* Изменение формы указателя при наведении */
+    z-index: 10; /* Позиционирование по оси Z */
+    }
+    /* Стили для линий иконки меню */
+    .menu-icon:checked + label:before, .menu-icon:not(:checked) + label:before {
+    position: absolute; /* Позиционирование абсолютно */
+    content: ''; /* Пустое содержимое (линии иконки) */
+    display: block; /* Отображение как блочный элемент */
+    width: 30px; /* Ширина 30px */
+    height: 20px; /* Высота 20px */
+    z-index: 20; /* Позиционирование по оси Z */
+    top: 0; /* Расположение по вертикали на 0 */
+    left: 0; /* Расположение слева на 0 */
+    border-top: 2px solid #ececee; /* Верхняя граница 2px, сплошная линия, 
+    цвет #ececee */
+    border-bottom: 2px solid #ececee; /* Нижняя граница 2px, сплошная линия, 
+    цвет #ececee */
+    transition: border-width 100ms 1500ms ease, top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
+    background-color 200ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1); /* Анимация изменения свойств с заданными параметрами */
+    }
+/* Стили для креста иконки меню */
+.menu-icon:checked + label:after, .menu-icon:not(:checked) + label:after {
+position: absolute; /* Позиционирование абсолютно */
+content: ''; /* Пустое содержимое (крест иконки) */
+display: block; /* Отображение как блочный элемент */
+width: 22px; /* Ширина 22px */
+height: 2px; /* Высота 2px */
+z-index: 20; /* Позиционирование по оси Z */
+top: 10px; /* Расположение по вертикали на 10px */
+right: 4px; /* Расположение справа на 4px */
+background-color: #ececee; /* Цвет фона #ececee */
+margin-top: -1px; /* Внешний отступ сверху на -1px */
+transition: width 100ms 1750ms ease, right 100ms 1750ms ease, margin-top 
+100ms ease, transform 200ms cubic-bezier(0.23, 1, 0.32, 1); /* Анимация 
+изменения свойств с заданными параметрами */
+}
+/* Анимация для изменения вида линий иконки меню при активации */
+.menu-icon:checked + label:before {
+    top: 10px; /* Расположение по вертикали на 10px */
+    transform: rotate(45deg); /* Поворот на 45 градусов */
+    height: 2px; /* Высота 2px */
+    background-color: #ececee; /* Цвет фона #ececee */
+    border-width: 0; /* Ширина границы 0 */
+    transition: border-width 100ms 340ms ease, top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
+    background-color 200ms 500ms ease, transform 200ms 1700ms cubic-bezier(0.23, 1, 
+    0.32, 1); /* Анимация изменения свойств с заданными параметрами */
+    }
+    /* Иконка "X" для закрытия меню */
+    .menu-icon:checked + label:after {
+    width: 30px; /* Ширина 30px */
+    margin-top: 0; /* Внешний отступ сверху 0 */
+    right: 0; /* Расположение справа на 0 */
+    transform: rotate(-45deg); /* Поворот на -45 градусов */
+    transition: width 100ms ease, right 100ms ease, margin-top 100ms 500ms
+    ease, transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1); /* Анимация 
+    изменения свойств с заданными параметрами */
+    }
+    /* Стили для навигационной панели */
+.nav {
+    position: fixed; /* Позиционирование фиксировано */
+    top: 33px; /* Расположение по вертикали на 33px от верхней границы */
+    right: 50px; /* Расположение справа на 50px от правой границы */
+    display: block; /* Отображение как блочный элемент */
+    width: 80px; /* Ширина 80px */
+    height: 80px; /* Высота 80px */
+    padding: 0; /* Внутренний отступ 0 */
+    margin: 0; /* Внешний отступ 0 */
+    z-index: 9; /* Индекс слоя 9 */
+    overflow: hidden; /* Скрытие содержимого, выходящего за пределы */
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3); /* Тень блока */
+    background-color: #353746; /* Цвет фона */
+    animation: border-transform 7s linear infinite; /* Анимация изменения формы 
+    с указанными параметрами */
+    transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1), right 350ms
+    1100ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms 1100ms ease, width 650ms
+    400ms cubic-bezier(0.23, 1, 0.32, 1), height 650ms 400ms cubic-bezier(0.23, 1, 
+    0.32, 1); /* Анимация изменения свойств с заданными параметрами */
+    }
+    /* Стили для списка элементов меню *
+    /* Стили для списка элементов меню */
+.nav ul {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Расположение по вертикали на 50% от родителя */
+    left: 0; /* Расположение слева на 0 */
+    display: block; /* Отображение как блочный элемент */
+    width: 100%; /* Ширина 100% */
+    padding: 0; /* Внутренний отступ 0 */
+    margin: 0; /* Внешний отступ 0 */
+    z-index: 6; /* Индекс слоя 6 */
+    text-align: center; /* Выравнивание текста по центру */
+    transform: translateY(-50%); /* Перемещение на -50% по вертикали */
+    list-style: none; /* Скрытие маркера списка */
+    }
+    /* Ключевые кадры для анимации изменения формы навигационной панели */
+    @keyframes border-transform {
+    0%, 100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+    }
+    .menu-icon:checked ~ .nav {
+        animation-play-state: paused; /* Остановка анимации */
+        top: 50%; /* Расположение по вертикали на 50% от родителя */
+        right: 50%; /* Расположение справа на 50% от родителя */
+        transform: translate(50%, -50%); /* Перемещение на 50% по горизонтали и -50% 
+        по вертикали */
+        width: 200%; /* Ширина 200% */
+        height: 200%; /* Высота 200% */
+        transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1), right 350ms 700ms
+        cubic-bezier(0.23, 1, 0.32, 1), transform 250ms 700ms ease, width 750ms 1000ms
+        cubic-bezier(0.23, 1, 0.32, 1), height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 
+        1); /* Анимация изменения свойств с заданными параметрами */
+        }
+        .menu-icon:checked ~ .nav ul li {
+            pointer-events: auto; /* Включение обработки событий мыши для элемента */
+            visibility: visible; /* Отображение элемента */
+            opacity: 1; /* Полная непрозрачность */
+            transform: translateY(0); /* Нулевое вертикальное смещение */
+            transition: opacity 350ms ease, transform 250ms ease; /* Анимация изменения 
+            свойств с заданными параметрами */
+            }
+            /* Задержка для анимации каждого элемента списка меню при открытом состоянии */
+            .menu-icon:checked ~ .nav ul li:nth-child(1) { transition-delay: 1400ms; }
+            .menu-icon:checked ~ .nav ul li:nth-child(2) { transition-delay: 1480ms; }
+            .menu-icon:checked ~ .nav ul li:nth-child(3) { transition-delay: 1560ms; }
+            .menu-icon:checked ~ .nav ul li:nth-child(4) { transition-delay: 1640ms; }
+            .menu-icon:checked ~ .nav ul li:nth-child(5) { transition-delay: 1720ms; }
+
+            /* Стили для каждого элемента списка меню */
+            .nav ul li {
+            position: relative; /* Относительное позиционирование */
+            display: block; /* Отображение как блочный элемент */
+            width: 100%; /* Ширина 100% */
+            padding: 0; /* Внутренний отступ 0 */
+            margin: 10px 0; /* Внешний отступ 10px сверху и снизу, 0 слева и справа */
+            text-align: center; /* Выравнивание текста по центру */
+            list-style: none; /* Скрытие маркера списка */
+            pointer-events: none; /* Запрет событий мыши для элемента */
+            opacity: 0; /* Прозрачность 0 */
+            visibility: hidden; /* Скрытие элемента */
+            transform: translateY(30px); /* Перемещение на 30px по вертикали */
+            transition: all 250ms linear; /* Анимация изменения всех свойств с заданными 
+            параметрами скрытия элементов*/
+            }
+            /* Задержка для анимации скрытия каждого элемента списка меню */
+            .nav ul li:nth-child(1) { transition-delay: 200ms; }
+            .nav ul li:nth-child(2) { transition-delay: 150ms; }
+            .nav ul li:nth-child(3) { transition-delay: 100ms; }
+            .nav ul li:nth-child(4) { transition-delay: 50ms; }
+            .nav ul li:nth-child(5) { transition-delay: 0ms; }
+
+            .nav ul li a {
+                font: 800 9vh/1.2 'Montserrat', sans-serif; /* Стиль шрифта */
+                display: inline-block; /* Отображение как встроенный блочный элемент */
+                position: relative; /* Относительное позиционирование */
+                color: #FFC000; /* Цвет текста */
+                transition: all 250ms linear; /* Анимация изменения всех свойств с заданными 
+                параметрами */
+                }
+                .nav ul li a:hover {
+                    text-decoration: none; /* Удаление подчеркивания текста по умолчанию */
+                    color: #C00000; /* Изменение цвета текста при наведении */
+                    }
+                    /* Стили для создания линии под ссылкой */
+                    .nav ul li a:after {
+                    display: block; /* Отображение как блочный элемент */
+                    position: absolute; /* Абсолютное позиционирование */
+                    top: 55%; /* Расположение по вертикали на 55% от родителя */
+                    content: ''; /* Пустое содержимое генерируемого элемента */
+                    height: 1vh; /* Высота 1vh */
+                    margin-top: -1vh; /* Внутренний отступ сверху -1vh */
+                    width: 0; /* Начальная ширина 0 */
+                    left: 0; /* Расположение слева на 0 */
+                    background-color: #353746; /* Цвет фона */
+                    opacity: 0.8; /* Прозрачность 0.8 */
+                    transition: width 250ms linear; /* Анимация изменения ширины с заданными 
+                    параметрами */
+                    }
+                    /* Анимация увеличения ширины линии при наведении на ссылку */
+                    .nav ul li a:hover:after {
+                    width: 100%; /* Увеличение ширины до 100% при наведении */
+                    }

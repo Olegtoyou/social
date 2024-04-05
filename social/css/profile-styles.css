@@ -1,0 +1,128 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #353746;
+    color: #eeeeec;
+    opacity: 0;
+    /* начинаем с нулевой прозрачности */
+    animation: slideIn 0.8s ease-in-out forwards;
+    /* анимация плавного появления */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    background-color: #464c5e;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 56px;
+    color: #FFC000;
+    -webkit-text-stroke: 2px #FFC000;
+    /* Обводка текста */
+    -webkit-text-fill-color: transparent;
+    /* Заполнение текста прозрачным цветом */
+}
+
+button {
+    background-color: #FFC000;
+    border: none;
+    color: #353746;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Стили для информации о пользователе */
+#profile-info {
+    background-color: #464c5e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#profile-info h2 {
+    color: #FFC000;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#profile-info p {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    /* жирное начертание */
+}
+
+#profile-picture-container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10%;
+    margin: 0 auto 20px auto;
+}
+
+#profile-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+
+/* Анимация при наведении на кнопки */
+button:hover {
+    background-color: #ffd903;
+    /* изменяем цвет фона при наведении */
+}
+
+/* Стили для раздела с постами пользователя */
+#user-posts {
+    background-color: #464c5e;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#user-posts h2 {
+    color: #FFC000;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+#posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+#posts-list li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comments-count,
+.info {
+    font-weight: bold;
+    color: #FFC000;
+    font-size: 16px;
+}
