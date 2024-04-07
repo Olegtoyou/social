@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #575d72;
+    color: #eeeeec;
+}
+
+#chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+#user-list,
+#chat-messages {
+    padding: 20px;
+}
+
+#user-list {
+    width: 200px;
+    background-color: #464c5e;
+    color: #eeeeec;
+    border-right: 1px solid #ccc;
+}
+
+#all-users {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#all-users li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #575d72;
+    transition: background-color 0.3s ease;
+    /* Новая анимация при наведении */
+}
+
+#all-users li.selected {
+    background-color: #575d72;
+    transition: background-color 0.3s ease;
+    /* Новая анимация при выборе пользователя */
+}
+
+#chat-messages {
+    flex-grow: 1;
+    min-height: 300px;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+    overflow-y: auto;
+}
+
+#message-input {
+    display: flex;
+    overflow: auto;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #464c5e;
+    /* Цвет фона блока ввода сообщений */
+    padding: 10px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+    /* Размещаем внизу, оставшееся пространство */
+}
+
+#message {
+    flex-grow: 1;
+    margin: 5px 10px;
+    /* Отступы слева и справа */
+    overflow: auto;
+    resize: none;
+    box-sizing: border-box;
+    height: 40px;
+    /* Начальная высота, можно установить любое значение */
+    border: 1px solid #eee;
+    /* Цвет обводки поля ввода сообщений */
+    border-radius: 5px;
+    /* Закругление углов поля ввода сообщений */
+    padding: 5px;
+    /* Внутренний отступ поля ввода сообщений */
+}
+
+#send-button {
+    margin-right: 20px;
+    /* Отступ слева для кнопки отправки */
+    background-color: #FFC000;
+    /* Цвет фона кнопки отправки */
+    color: #353746;
+    /* Цвет текста кнопки отправки */
+    border: none;
+    /* Убираем границу кнопки */
+    border-radius: 5px;
+    /* Закругление углов кнопки отправки */
+    padding: 8px 15px;
+    /* Внутренний отступ кнопки отправки */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Анимация при изменении цвета фона */
+}
+
+#send-button:hover {
+    background-color: #c49f30;
+    /* Измененный цвет фона кнопки отправки при наведении */
+}
+
+/* Анимация для сообщений */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.chat-message {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Новая анимация при наведении */
+#all-users li:hover {
+    background-color: #485169;
+}
+
+#chat-messages div {
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #353746;
+    /* Цвет обводки */
+    border-radius: 5px;
+    /* Закругление углов */
+    background-color: #f0f0f0;
+    /* Цвет фона сообщения */
+    transition: background-color 0.3s;
+    /* Анимация при изменении цвета фона */
+    color: #353746;
+    /* Цвет текста сообщения */
+}
+
+#chat-messages div:hover {
+    background-color: #C0C0C0;
+    /* Измененный цвет фона при наведении */
+}
+
+#chat-messages div:last-child {
+    display: none;
+}
+
+#sticker-trigger {
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Плавная анимация масштабирования */
+}
+
+#sticker-trigger:hover {
+    transform: scale(1.6);
+    /* Увеличение в 1.6 раза при наведении */
+}
+
+#sticker-list {
+    display: none;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+    /* Анимация плавного появления/исчезания */
+}
+
+#sticker-list.show {
+    display: flex;
+    opacity: 1;
+}
+
+.sticker {
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sticker:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
